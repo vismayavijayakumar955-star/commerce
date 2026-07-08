@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VENU - Premium E-Commerce Store for Fashion, Electronics, Beauty and more">
+  <title>VENU — Premium E-Commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div id="loading-screen">
+  <div class="loader"></div>
+</div>
+
+<!-- ============ SCROLL TO TOP ============ -->
+<button id="scroll-top-btn" aria-label="Scroll to top">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- ============ NAVIGATION BAR ============ -->
+<header id="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="#" class="logo">VENU</a>
+    </div>
+
+    <nav class="nav-center" id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#shop" class="nav-link">Shop</a></li>
+        <li class="dropdown">
+          <a href="#categories" class="nav-link">Categories <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <ul class="dropdown-menu">
+            <li><a href="#categories">Men's Fashion</a></li>
+            <li><a href="#categories">Women's Fashion</a></li>
+            <li><a href="#categories">Electronics</a></li>
+            <li><a href="#categories">Beauty</a></li>
+            <li><a href="#categories">Shoes</a></li>
+            <li><a href="#categories">Watches</a></li>
+            <li><a href="#categories">Accessories</a></li>
+            <li><a href="#categories">Home Decor</a></li>
+          </ul>
+        </li>
+        <li><a href="#new-arrivals" class="nav-link">New Arrivals</a></li>
+        <li><a href="#best-sellers" class="nav-link">Best Sellers</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-right">
+      <button class="nav-icon" id="search-toggle" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="nav-icon" id="wishlist-toggle" aria-label="Wishlist">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="badge" id="wishlist-count">0</span>
+      </button>
+      <button class="nav-icon" id="cart-toggle" aria-label="Shopping cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="badge" id="cart-count">0</span>
+      </button>
+      <button class="nav-icon login-btn" id="login-btn" aria-label="Login">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SEARCH OVERLAY ============ -->
+<div class="search-overlay" id="search-overlay">
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search products, brands, categories..." autocomplete="off">
+    <button id="search-close" aria-label="Close search">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ============ HERO SECTION ============ -->
+<section id="home" class="hero">
+  <div class="hero-bg-animation">
+    <div class="floating-circle c1"></div>
+    <div class="floating-circle c2"></div>
+    <div class="floating-circle c3"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-tagline">Summer Collection 2026</p>
+    <h1 class="hero-title">Elevate Your<br><span>Everyday Style</span></h1>
+    <p class="hero-subtitle">Discover premium fashion, electronics, and lifestyle products curated for those who demand the extraordinary.</p>
+    <div class="hero-buttons">
+      <a href="#shop" class="btn btn-primary">Shop Now</a>
+      <a href="#categories" class="btn btn-secondary">Explore Collection</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-image-wrapper">
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80" alt="Fashion lifestyle" class="hero-image" loading="eager">
+      <div class="hero-image-overlay"></div>
+    </div>
+    <div class="floating-badge b1">
+      <span class="badge-icon">&#9733;</span>
+      <div><strong>Premium</strong><br>Quality</div>
+    </div>
+    <div class="floating-badge b2">
+      <span class="badge-icon">&#10003;</span>
+      <div><strong>Free</strong><br>Shipping</div>
+    </div>
+    <div class="floating-badge b3">
+      <span class="badge-icon">&#x21BB;</span>
+      <div><strong>30-Day</strong><br>Returns</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES SECTION ============ -->
+<section id="categories" class="section categories-section">
+  <div class="section-header">
+    <span class="section-subtitle">Shop by Category</span>
+    <h2 class="section-title">Browse Our Collections</h2>
+    <p class="section-desc">From fashion to electronics, find everything you need in one place.</p>
+  </div>
+  <div class="categories-grid" id="categories-grid">
+    <!-- Categories injected by JS -->
+  </div>
+</section>
+
+<!-- ============ SHOP / FEATURED PRODUCTS SECTION ============ -->
+<section id="shop" class="section shop-section">
+  <div class="section-header">
+    <span class="section-subtitle">Our Products</span>
+    <h2 class="section-title">Featured Products</h2>
+    <p class="section-desc">Handpicked favorites from our latest collection.</p>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar" id="filter-bar">
+    <div class="filter-left">
+      <select id="filter-category" class="filter-select">
+        <option value="all">All Categories</option>
+      </select>
+      <select id="filter-price" class="filter-select">
+        <option value="all">All Prices</option>
+        <option value="0-25">Under $25</option>
+        <option value="25-50">$25 - $50</option>
+        <option value="50-100">$50 - $100</option>
+        <option value="100-999">Over $100</option>
+      </select>
+      <select id="filter-rating" class="filter-select">
+        <option value="all">All Ratings</option>
+        <option value="4">4+ Stars</option>
+        <option value="3">3+ Stars</option>
+        <option value="2">2+ Stars</option>
+      </select>
+    </div>
+    <div class="filter-right">
+      <select id="sort-by" class="filter-select">
+        <option value="default">Default</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="latest">Latest</option>
+        <option value="popularity">Popularity</option>
+        <option value="rating">Highest Rated</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="products-grid" id="products-grid">
+    <!-- Products injected by JS -->
+  </div>
+</section>
+
+<!-- ============ NEW ARRIVALS SECTION ============ -->
+<section id="new-arrivals" class="section new-arrivals-section">
+  <div class="section-header">
+    <span class="section-subtitle">Fresh Picks</span>
+    <h2 class="section-title">New Arrivals</h2>
+    <p class="section-desc">Be the first to shop the latest drops.</p>
+  </div>
+  <div class="products-grid" id="new-arrivals-grid">
+    <!-- New arrivals injected by JS -->
+  </div>
+</section>
+
+<!-- ============ BEST SELLERS SECTION ============ -->
+<section id="best-sellers" class="section best-sellers-section">
+  <div class="section-header">
+    <span class="section-subtitle">Trending Now</span>
+    <h2 class="section-title">Best Sellers</h2>
+    <p class="section-desc">Our most popular products loved by customers worldwide.</p>
+  </div>
+  <div class="products-grid" id="best-sellers-grid">
+    <!-- Best sellers injected by JS -->
+  </div>
+</section>
+
+<!-- ============ PROMOTIONAL BANNER ============ -->
+<section class="promo-banner">
+  <div class="promo-bg-animation"></div>
+  <div class="promo-content">
+    <span class="promo-tag">Limited Time Offer</span>
+    <h2 class="promo-title">Summer Sale Up to <span>60% Off</span></h2>
+    <p class="promo-subtitle">Grab your favorites before they're gone. Use code <strong>VENU60</strong> at checkout.</p>
+    <div class="countdown" id="countdown">
+      <div class="countdown-item"><span id="count-days">00</span><small>Days</small></div>
+      <div class="countdown-item"><span id="count-hours">00</span><small>Hours</small></div>
+      <div class="countdown-item"><span id="count-minutes">00</span><small>Mins</small></div>
+      <div class="countdown-item"><span id="count-seconds">00</span><small>Secs</small></div>
+    </div>
+    <a href="#shop" class="btn btn-primary promo-btn">Shop the Sale</a>
+  </div>
+</section>
+
+<!-- ============ ABOUT SECTION ============ -->
+<section id="about" class="section about-section">
+  <div class="about-grid">
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="About VENU" loading="lazy">
+    </div>
+    <div class="about-content">
+      <span class="section-subtitle">Why VENU</span>
+      <h2 class="section-title">Redefining Online Shopping</h2>
+      <p>VENU is more than just a store — it's a curated experience. We bring together the finest products from around the world, ensuring quality, style, and sustainability in every purchase.</p>
+      <div class="about-stats">
+        <div class="stat"><strong>50K+</strong><span>Happy Customers</span></div>
+        <div class="stat"><strong>10K+</strong><span>Products</span></div>
+        <div class="stat"><strong>99%</strong><span>Satisfaction</span></div>
+        <div class="stat"><strong>24/7</strong><span>Support</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER SECTION ============ -->
+<section class="section newsletter-section">
+  <div class="newsletter-container">
+    <h2 class="newsletter-title">Join the VENU Community</h2>
+    <p class="newsletter-desc">Subscribe for exclusive deals, new arrivals, and insider access.</p>
+    <form class="newsletter-form" id="newsletter-form">
+      <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+    <p class="newsletter-message" id="newsletter-message"></p>
+  </div>
+</section>
+
+<!-- ============ CONTACT SECTION ============ -->
+<section id="contact" class="section contact-section">
+  <div class="section-header">
+    <span class="section-subtitle">Get In Touch</span>
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-desc">Have a question? We'd love to hear from you.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><h4>Address</h4><p>123 Fashion Ave, New York, NY 10001</p></div>
+      </div>
+      <div class="contact-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div><h4>Email</h4><p>support@venu.com</p></div>
+      </div>
+      <div class="contact-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div><h4>Phone</h4><p>+1 (555) 123-4567</p></div>
+      </div>
+      <div class="contact-social">
+        <a href="#" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      </div>
+    </div>
+    <form class="contact-form" id="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">VENU</a>
+        <p>Curating the finest products for a lifestyle of distinction. Quality, style, and sustainability — delivered.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#new-arrivals">New Arrivals</a></li>
+          <li><a href="#best-sellers">Best Sellers</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#categories">Men's Fashion</a></li>
+          <li><a href="#categories">Women's Fashion</a></li>
+          <li><a href="#categories">Electronics</a></li>
+          <li><a href="#categories">Beauty</a></li>
+          <li><a href="#categories">Shoes</a></li>
+          <li><a href="#categories">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Service</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Order Tracking</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 VENU. All rights reserved. Crafted with passion.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CART SIDEBAR ============ -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3>Shopping Cart</h3>
+    <button id="cart-close" aria-label="Close cart">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <!-- Cart items injected by JS -->
+  </div>
+  <div class="cart-empty" id="cart-empty">
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    <p>Your cart is empty</p>
+    <a href="#shop" class="btn btn-primary">Start Shopping</a>
+  </div>
+  <div class="cart-footer" id="cart-footer">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cart-total">$0.00</span>
+    </div>
+    <button class="btn btn-primary checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<!-- ============ WISHLIST SIDEBAR ============ -->
+<div class="wishlist-overlay" id="wishlist-overlay"></div>
+<div class="wishlist-sidebar" id="wishlist-sidebar">
+  <div class="cart-header">
+    <h3>My Wishlist</h3>
+    <button id="wishlist-close" aria-label="Close wishlist">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cart-items wishlist-items" id="wishlist-items">
+    <!-- Wishlist items injected by JS -->
+  </div>
+  <div class="cart-empty" id="wishlist-empty">
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    <p>Your wishlist is empty</p>
+    <a href="#shop" class="btn btn-primary">Discover Products</a>
+  </div>
+</div>
+
+<!-- ============ LOGIN MODAL ============ -->
+<div class="modal-overlay" id="modal-overlay"></div>
+<div class="login-modal" id="login-modal">
+  <button class="modal-close" id="modal-close" aria-label="Close modal">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div class="modal-body">
+    <h2>Welcome Back</h2>
+    <p class="modal-subtitle">Sign in to your VENU account</p>
+    <form id="login-form">
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="••••••••" required>
+      </div>
+      <div class="form-options">
+        <label class="checkbox-label">
+          <input type="checkbox" id="remember-me"> Remember Me
+        </label>
+        <a href="#" class="forgot-link">Forgot Password?</a>
+      </div>
+      <button type="submit" class="btn btn-primary modal-btn">Sign In</button>
+      <p class="register-link">Don't have an account? <a href="#">Register</a></p>
+    </form>
+  </div>
+</div>
+
+<!-- ============ QUICK VIEW MODAL ============ -->
+<div class="quickview-modal" id="quickview-modal">
+  <div class="quickview-content">
+    <button class="modal-close" id="quickview-close" aria-label="Close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="quickview-body" id="quickview-body">
+      <!-- Quick view content injected by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOAST CONTAINER ============ -->
+<div class="toast-container" id="toast-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
